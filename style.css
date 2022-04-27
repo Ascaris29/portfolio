@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+
+*, ::before, ::after
+{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+body
+{
+    width:100%;
+    height:100vh;
+    font-family: "Roboto", sans-serif;
+    color:#fff;
+
+}
+
+#background-video
+{
+    
+position:absolute;
+top:0;
+left:0;
+width:100%;                                         /*video du background*/
+height:100%;
+object-fit: cover;
+filter:saturate(180%);
+/*opacity:0.5;*/
+z-index:-1;
+
+}
+
+.titre-musique
+{
+    color:white;
+    position:absolute;
+    top:0;
+    right:0;
+    margin:40px;
+    font-weight:bold;
+    font-size:0.8em;
+    opacity:0;
+    
+}
+.titre-musique > i
+{
+    margin:5px;
+    
+}
+
+nav
+{
+ width:100%;
+ height:180px;
+ background:rgba(0,0,0,0.5)
+}
+.nav-list
+{
+    position:sticky;
+    right:0;
+    top:0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;                                /*liste barre nav "element parent"*/
+    padding: 4rem 3rem 0 0;
+    background-size: contain;
+    height:150px; /*verifier si problemes de positions*/
+ 
+}
+.nav-item
+{
+   margin-right:5rem;
+   text-transform: uppercase;                           /* barre navigation*/
+   font-weight: bold; 
+   
+   
+}
+
+.nav-item > a
+{
+    color: #fff;
+    font-size: 1em;                                     /*liens 'a' barre de navigation*/
+    letter-spacing: 5px;
+    transition:color 0.5s ease-in-out;
+}
+
+.nav-item >a:hover
+{
+  color: rgb(183,6,6);                               /*liens 'a' barre nav survolé*/
+}
+
+
+.nav-item:nth-child(1) 
+{
+    
+                                     /*premier element de la barre nav*/
+    margin-right: 30rem;
+}
+.nav-item:nth-child(1)> a >i
+{
+    color:rgb(183,6,6);                                /*element 'i' dans le 'a' du premier element de la barre nav*/
+    font-weight:bold;
+}
+.nav-item:nth-child(6) >a
+{
+    color:rgb(183,6,6);                               /*element 'a' dans le dernier element de la barre nav*/
+    
+}
+.nav-item:nth-child(6):hover
+{
+   animation:shake 0.5s infinite;                       /* effet wizz au survol du dernier element de la barre nav*/
+}
+
+@keyframes shake
+{
+    0% {transform: translate(1px,1px) rotate(0deg);}
+    10% {transform:translate(-1px, 2px) rotate(-1deg);}
+    20% {transform:translate(-3px, 2px) rotate(1deg);}
+    30% {transform:translate(3px, 2px) rotate(0deg);}
+    40% {transform:translate(1px,-1px)rotate(1deg);}
+    50% {transform:translate(-3px,1px)rotate(-1deg);}
+    60% {transform:translate(3px,1px)rotate(0deg);}                    /*effet wizz*/
+    70% {transform:translate(-1px,-1px)rotate(1deg)}
+    80% {transform:translate(1px,2px)rotate(-1deg);}
+    90% {transform:translate(1px,-2px)rotate(0deg);}
+    100% {transform:translate(1px,1px)rotate(-1deg);}
+}
+
+#Accueil
+{
+    
+    text-align: center;                                         /*première section*/
+    margin-top:300px;
+    
+}
+
+.name 
+{
+    letter-spacing: 3px;
+    font-size: 2.5em;                                           
+}
+
+.titre
+{
+    padding:30px;
+    letter-spacing: 3px;
+    font-size:1.5em;
+}
+.btn-contact
+{
+    padding:60px;                                               /*bouton contactez moi "element parent"*/
+    animation: pulse 1s infinite;
+    transform:scale(1);
+    
+    
+}
+.btn-contact >a 
+{
+    color:#fff;
+     border:rgb(183,6,6) solid 5px;
+     padding:20px;
+     font-weight:bold;                                          /* bouton contact lien 'a'*/
+     letter-spacing: 2px;
+     border-radius:3px;
+     background-image:transparent;
+     transition:all 0.5s ease-in-out;
+     
+}
+
+@keyframes pulse 
+{
+    0% {
+        transform:scale(0.8);
+    }
+
+    50%
+    {                                                           /*effet pulsation*/
+        
+
+         transform:scale(1);
+    }
+    
+    100%
+    {
+        transform:scale(0.8);
+    }
+    
+}
+
+#Apropos
+{
+    padding:400px 100px;
+    color:black;
+    height:auto;
+    
+    
+}
+.titreApropos
+{
+    text-align:center;
+    text-transform:uppercase;
+    font-size:2em;
+    color:rgb(183,6,6)
+}
+.photoApropos
+{
+    
+    padding:50px 0 50px 0;
+    text-align:center;
+    margin-right:20px;
+}
+
+.img-solene
+{
+    
+    border-radius:5px;
+}
+
+
+
+.txtApropos
+{
+    text-align:center;
+    font-size:1.5em;
+    color:#150D0C;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-column-gap: 20px;
+    
+    
+    
+    
+}
+
+.txt1
+{
+    background:rgba(21,13,12,0.8);
+    color:#fff;
+    padding:50px 50px;
+    
+    border-radius: 5px;
+    
+}
+
+.txt1 >i
+{
+    transform:scale(3);
+    padding:40px 40px;
+    color:rgb(183,6,6)
+}
+.txt1 >p
+{
+    padding:60px 0;
+}
+
+strong
+{
+    color:rgb(183,6,6)
+}
+
+.txt2
+{
+    background:rgba(21,13,12,0.2);
+    color:rgb(183,6,6);
+    border-radius: 5px;
+    padding:50px 40px;
+}
+
+.txt2 >i
+{
+    padding:40px;
+    transform:scale(2.5);
+}
+.txt2 >p
+{
+    padding:60px 0;
+}
+
+.txt3
+{
+    background:rgba(21,13,12,0.8);
+    color:#fff;
+    padding:50px 50px;
+    
+    border-radius: 5px;
+}
+
+.txt3 >i
+{
+    transform:scale(2.5);
+    padding:40px;
+    color:rgb(183,6,6); 
+}
+
+.txt3>p 
+{
+    padding: 40px 0;
+}
+
+.txt4
+{
+    background:rgba(21,13,12,0.2);
+    color:rgb(183,6,6);
+    border-radius: 5px;
+    padding:50px 40px;
+}
+.txt4>i
+{
+    transform:scale(2.5);
+    padding:40px;
+    color:rgb(183,6,6);
+}
+    
+.txt4>p
+{
+    padding: 40px 0;
+}
