@@ -1,0 +1,46 @@
+ .blobHero{
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        margin-top:30px;
+        width:100%;
+        position:relative;
+        video{
+            width:100%;
+            height:100%;
+        }
+    .blobHeroText{
+        position:absolute;
+        width:45%;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        h1{
+            color:white;
+            font-size:2rem;
+        }
+        p{
+            font-size:1.8rem;
+            color:white;
+        }
+        .blobButtons{
+            display:flex;
+            gap:20px;
+            align-items: center;
+            justify-content: center;
+            margin-top:10px;
+            button{
+                border:none;
+                padding:10px 20px;
+                 cursor:pointer;
+                border-radius: 5px;
+                color:var(--primary);
+                font-weight:600;
+                width:200px;
+                height:50px;
+                font-size:1.2rem;
+            }
+        }
+        
+    }
+}

@@ -1,0 +1,37 @@
+
+.header{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width:1280px;
+    margin:auto;
+    width:100%;
+    .headerLogo{
+        color:var(--primary);
+        font-size:2rem;
+    }
+    .socialMediaNight{
+        color:white;
+        font-size:1.5rem;
+        cursor:pointer;
+    }
+    .socialMediaLight{
+        color:var(--primary);
+        font-size:1.5rem;
+        cursor:pointer;
+    }
+    .btnChangeColor{
+        .iconSun{
+            color:var(--yellow);
+            font-size:1.5rem;
+            cursor:pointer;
+        }
+        .iconMoon{
+            color:var(--primary);
+            font-size:1.5rem;
+            cursor:pointer;
+        }
+    }
+}
+
+

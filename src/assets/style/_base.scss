@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+    font-size:64%;
+    font-family:var(--montserrat);
+    background-color: black;
+    cursor:url("../../../public/images/sun.png"), pointer;
+    scrollbar-color: var(--primary);
+}
+
+body::-webkit-scrollbar{
+    background-color: var(--white);
+    // width:10px;
+    border:1px solid black;
+    border-radius:10px;
+    height:5px;
+}
+body::-webkit-scrollbar-thumb{
+    background-color:var(--primary);
+    border-radius:10px;
+}
+
+h1,h2,h3,h4,p{
+    margin:0;
+    padding:0;
+}
+
+

@@ -1,0 +1,32 @@
+[
+    {
+        "title" : "le masto-site",
+        "image" : "/images/mastosite1.png",
+        "description" :"Le masto-site est un projet personnel que j'ai décidé de créer afin de recenser tous les articles scientifiques existant sur la toile qui concerne les mastocytes. Ce site est actuellement toujours en construction, la déploiement sera sûrement pour fin avril 2023.",
+        "technologies":["react", "node.js", "scss"]
+    },
+    {
+        "title" : "Kasa",
+        "image" : "/images/kasa1.png",
+        "description" :"Kasa est une reproduction de site à partir d'une maquette figma lors de ma formation. C'est un site de logement locatif dans les grandes villes principales de France.",
+        "technologies":["react", "scss"]
+    },
+    {
+        "title" : "HotTakes",
+        "image" : "/images/hottakes2.png",
+        "description" :"HotTakes est une reproduction d'application de notation de sauces. L'utilisateur a la possibilité de s'inscrire à l'application et de poster des sauces ainsi que de les liker",
+        "technologies":["angular", "node.js", "scss"]
+    },
+    {
+        "title" : "OhMyFood",
+        "image" : "/images/ohmyfood2.png",
+        "description" :"Le site OhmyFood est une reproduction de site reproduit à partir d'une maquette adobeXd lors de ma formation. C'est une application de commande de repas de luxe dans les principales grandes villes françaises.",
+        "technologies":["html", "scss", "bootstrap"]
+    },
+    {
+        "title" : "Booki",
+        "image" : "/images/booki2.png",
+        "description" :"Le site Booki est une reproduction de site reproduit à partir d'une maquette figma lors de ma formation. C'est une application de location d'hébergements dans les principales grandes villes françaises.",
+        "technologies":["html", "scss"]
+    }
+]
