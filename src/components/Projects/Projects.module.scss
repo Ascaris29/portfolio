@@ -85,3 +85,11 @@
 .animation-third{
     animation: card 1s linear 1s infinite alternate;
 }
+
+.colorLight{
+    color:var(--primary) !important;
+}
+
+.colorDark{
+    color:var(--dark)!important;
+}

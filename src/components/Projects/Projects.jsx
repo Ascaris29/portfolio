@@ -3,7 +3,7 @@ import data from "../../Datas/Projets/Projets.json";
 import CardProjects from "./components/CardProjects";
 
 
-export default function Projects(){
+export default function Projects({colorTheme, updateColor}){
 
 function randomClassName(min, max){
     min = Math.ceil(min);
@@ -20,12 +20,12 @@ function randomClassName(min, max){
 
     const number = randomClassName(1,3)
 
-
+    console.log(colorTheme)
 
     return (
         <div className={`${style.blocProjects}`}>
-            <h2>Mes Projets </h2>
-            <p>Ceci est une sélection de mes projets realisés durant ma formation</p>
+            <h2 className={colorTheme ? `colorLight`: `colorDark`}>Mes Projets </h2>
+            <p className={colorTheme ? `$colorLight`: `colorDark`}>Ceci est une sélection de mes projets realisés durant ma formation</p>
             <div className={`${style.blocCardsProject}`}>
                 { data.map((p) => 
                     <CardProjects 
@@ -37,7 +37,9 @@ function randomClassName(min, max){
                         title={p.title} 
                         alt={p.title}
                         classNameModale={`${style.BlocModale}`}
-                        data={data}                                 //transmission d'une props avec les données dedans, je l'envoie au composant cardProjects
+                        data={data}  
+                        themeColor={colorTheme}
+                        updateThemeColor={updateColor}                               //transmission d'une props avec les données dedans, je l'envoie au composant cardProjects
                         />
                 )}
                     {/* <div className={`${style.card}`}>
