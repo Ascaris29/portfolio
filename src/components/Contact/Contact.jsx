@@ -122,7 +122,7 @@ export default function Contact({colorTheme, updateColor}){
             headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString(),
           })
-          .then(() => alert("Form successfully submitted"))
+          .then(() => alert("Tout est ok !"))
             .catch((error) => alert(error));
     }
   
