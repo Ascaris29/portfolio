@@ -111,7 +111,11 @@ export default function Contact({colorTheme, updateColor}){
         slideInTop(".btnFormContact", 1, 0.3);
     },[])
 
-    const onSubmit = data => console.log(data);
+    function testData(e){
+        e.preventDefault();
+        alert("envoyé");
+    }
+     
 
     return (
         <div id="contact" className={`${style.blocContact}`}>
@@ -120,7 +124,7 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form method="post" className={`${style.formContact}`} onSubmit={handleSubmit(onSubmit)} data-netlify="true" netlify netlify-honeypot="bot-field">
+                <form method="post" className={`${style.formContact}`} data-netlify="true" netlify netlify-honeypot="bot-field">
                     <input type="hidden" name="form-name" value="contact" />
                     <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name="name"/>
                     {
@@ -140,7 +144,7 @@ export default function Contact({colorTheme, updateColor}){
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
                         )
                     }
-                    <button onClick={onSubmit} className="btnFormContact">Envoyer votre message</button>
+                    <button className="btnFormContact" type="submit" onClick={testData()}>Envoyer votre message</button>
                 </form>
         </div>
     )
