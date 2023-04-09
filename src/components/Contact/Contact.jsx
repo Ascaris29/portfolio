@@ -8,28 +8,28 @@ import { useEffect } from "react";
 
 export default function Contact({colorTheme, updateColor}){
 
-    const schema = yup.object({
-        name : yup.string().required('Votre prénom est requis').min(2, 'Votre nom est trop court').max(15, 'Votre nom est trop long'),
-        email : yup.string().email().required('N\'oubliez pas votre email s\'il vous plait'),
-        message : yup.string().required(('J\'ai besoin d\'un message pour comprendre')),
-    })
+    // const schema = yup.object({
+    //     name : yup.string().required('Votre prénom est requis').min(2, 'Votre nom est trop court').max(15, 'Votre nom est trop long'),
+    //     email : yup.string().email().required('N\'oubliez pas votre email s\'il vous plait'),
+    //     message : yup.string().required(('J\'ai besoin d\'un message pour comprendre')),
+    // })
 
-    const defaultValues = {
-        name : "",
-        email : "",
-        message:"",
-    }
+    // const defaultValues = {
+    //     name : "",
+    //     email : "",
+    //     message:"",
+    // }
 
-    const {
-        register, 
-        handleSubmit,
-        formState: { errors }} 
-        = useForm({
-        resolver : yupResolver(schema),
-        defaultValues,
-        criteriaMode: "all",
-        mode : "onSubmit"
-    });
+    // const {
+    //     register, 
+    //     handleSubmit,
+    //     formState: { errors }} 
+    //     = useForm({
+    //     resolver : yupResolver(schema),
+    //     defaultValues,
+    //     criteriaMode: "all",
+    //     mode : "onSubmit"
+    // });
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -135,25 +135,25 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form method="post" className={`${style.formContact}`} onSubmit={handleSubmit(onSubmit)} data-netlify="true" netlify netlify-honeypot>
-                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name="name" id="name"/>
-                    {
+                <form method="post" className={`${style.formContact}`} data-netlify="true" netlify netlify-honeypot>
+                    <input type="text"  placeholder="Votre prénom *" className="inputName" name="name" id="name"/>
+                    {/* {
                         errors?.name && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.name.message}</p>
                         )
-                    }
-                    <input type="text" {...register("email")} placeholder="Votre email *" className="inputEmail" name="email"/>
-                    {
+                    } */}
+                    <input type="text"  placeholder="Votre email *" className="inputEmail" name="email"/>
+                    {/* {
                         errors?.email && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.email.message}</p>
                         )
-                    }
-                    <textarea type="text" {...register("message")} placeholder="Votre message *" className="inputMessage" name="message"/>
-                    {
+                    } */}
+                    <textarea type="text" placeholder="Votre message *" className="inputMessage" name="message"/>
+                    {/* {
                         errors?.message && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
                         )
-                    }
+                    } */}
                     <button onClick={onSubmit} className="btnFormContact" type="submit">Envoyer votre message</button>
                 </form>
         </div>
