@@ -27,6 +27,9 @@
         @include mixin.sm-lt{
             font-size:1.5rem;
         }
+        @include mixin.xs{
+            font-size:1.3rem;
+        }
 
     }
     .pTitle{
@@ -37,6 +40,12 @@
         }
         @include mixin.sm-lt{
             font-size:1rem;
+        }
+        @include mixin.xs{
+            font-size:14px;
+        }
+        @media screen and (max-width: 400px) {
+            font-size:12px;
         }
     }
     .aproposBlocText{
@@ -51,6 +60,12 @@
             flex-direction: column;
             text-align: center;
         }
+        @include mixin.xs{
+            font-size:14px;
+        }
+        @media screen and (max-width: 400px) {
+            font-size:10px;
+         }
     }
     .pBlocTxt{
         width:calc(100% / 2);
@@ -63,6 +78,12 @@
         @include mixin.sm-lt{
             font-size:1rem;
         }
+        @include mixin.xs{
+            font-size:14px;
+        }
+        @media screen and (max-width: 400px) {
+            font-size:12px;
+         }
     }
     .aproposImg{
         width:calc(100% / 2);
@@ -78,6 +99,9 @@
             @include mixin.md-lt{
                 height:300px;
             }
+            @media screen and (max-width: 400px) {
+                height:200px;
+             }
         }
     }
     .aproposButton{
@@ -92,6 +116,9 @@
             i{
                 margin-left:5px;
             }
+            @media screen and (max-width: 400px) {
+                font-size:12px;
+             }
         }
     }
 }

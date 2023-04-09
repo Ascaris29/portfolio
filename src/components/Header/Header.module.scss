@@ -39,6 +39,9 @@
     @include mixin.lg-lt{
         padding:0 50px;
     }
+    @include mixin.xs{
+        padding:0 30px;
+    }
     .headerLogo{
         color:var(--primary);
         font-size:2rem;
@@ -52,6 +55,9 @@
             position:absolute;
             bottom:0%;
             left:0%;
+        }
+        @include mixin.xs{
+            font-size:1rem;
         }
     }
     .iconHeaderSocial{

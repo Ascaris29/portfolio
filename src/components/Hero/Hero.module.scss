@@ -1,21 +1,7 @@
 @use "../../assets/style/mixins" as mixin;
 
 
-@keyframes apparition {
-    0%{
-        opacity: 0;
-    }
-    50%{
-        opacity: 0;
-    }
-    70%{
-        opacity: 0.5;
-    }
-    100%{
-        opacity:1;
-    }
-    
-}
+
  .blobHero{
         display:flex;
         justify-content: center;
@@ -78,6 +64,9 @@
             @include mixin.xs{
                 font-size: 12px;
             }
+            @media screen and (max-width: 400px) {
+                margin-top:5px;
+            }
         }
         .blobButtons{
             display:flex;
@@ -85,9 +74,9 @@
             align-items: center;
             justify-content: center;
             margin-top:50px;
-            // @include mixin.sm-lt{
-            //     flex-direction: column;
-            // }
+              @media screen and (max-width: 400px) {
+                margin-top:5px;
+            }
             button{
                 border:none;
                 padding:10px 20px;
@@ -103,6 +92,11 @@
                 }
                 @include mixin.sm-lt{
                     font-size:1rem;
+                }
+                @media screen and (max-width: 450px) {
+                    width:115px;
+                    height:40px;
+                    font-size:10px;
                 }
                 a{
                     text-decoration:none;

@@ -30,6 +30,12 @@
         @include mixin.sm-lt{
             font-size:1.5rem;
         }
+        @include mixin.xs{
+            font-size:1.3rem;
+        }
+        @media screen and (max-width: 400px) {
+           font-size:14px;
+        }
     }
     p{
         margin-top:30px;
@@ -40,10 +46,19 @@
         @include mixin.sm-lt{
             font-size:1rem;
         }
+        @include mixin.xs{
+            font-size:14px;
+        }
+        @media screen and (max-width: 400px) {
+            font-size:12px;
+         }
     }
     .blocProjectsItem{
         margin-top:30px;
         animation:animation 100s linear infinite;
+        @media screen and (max-width: 400px) {
+            visibility: hidden;
+        }
     }
     .blocCardsProject{
         max-width:1280px;
@@ -59,6 +74,10 @@
             grid-template-columns: repeat(3, 350px);
             padding:0 15px;
         }
+        @include mixin.lg-l{
+            grid-template-columns: repeat(3, 300px);
+            padding:0 15px;
+        }
         @include mixin.md-lt{
             grid-template-columns: repeat(2, 350px);
             padding:0 15px;
@@ -67,12 +86,19 @@
             grid-template-columns: repeat(1, 100%);
             width:100%;
         }
+        @media screen and (max-width: 400px) {
+            font-size:14px;
+            padding: 0 20px;
+         }
         .card{
             background-color:#264366;
             border-radius:10px;
             padding:20px 10px;
             height:350px;
             cursor:pointer;
+            @media screen and (max-width: 400px) {
+                height:250px;
+             }
             img{
                 width:100%;
                 border-radius: 10px;
@@ -84,6 +110,15 @@
                 font-size:1rem;
                 text-align:left;
                 margin:0 20px;
+                i{
+                    margin-left:5px;
+                }
+                @include mixin.xs{
+                    font-size:14px;
+                }
+                @media screen and (max-width: 400px) {
+                    margin:0;
+                 }
             }
         }
         .TitleCardProject{
@@ -91,6 +126,12 @@
             margin:20px;
             font-size:1rem;
             font-weight:500;
+            @include mixin.xs{
+                font-size:14px;
+            }
+            @media screen and (max-width: 400px) {
+                margin:10px 0;
+            }
         }
         .BlocModale{
             width:600px;

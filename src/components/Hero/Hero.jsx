@@ -43,6 +43,9 @@ useEffect(() => {
 useEffect(() => {
     slideInTop(".blobButtonsPortfolio", "0.5", "1");
 },[])
+useEffect(() => {
+    slideInTop(".textHero", "0.5", "1");
+},[])
 
 
 
@@ -50,7 +53,7 @@ useEffect(() => {
     return (
                 <main className={`${style.blobHero}`}>
                     <video src={video} autoPlay loop muted className="video"></video>
-                    <div className={`${style.blobHeroText}`}>
+                    <div className={`${style.blobHeroText} textHero`}>
                        <h1>Je suis Solène LEMA, développeuse web.</h1> 
                        <p>Je concois et developpe des sites web accessibles et intuitifs.</p>
                        <p>Ces sites web mettront en valeur votre marque, votre entreprise, votre personnalité aussi merveilleuse soit-elle ✨</p>

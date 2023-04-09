@@ -26,6 +26,9 @@
     .blocQualitesTitle{
         font-size:1.5rem;
         font-weight:500;
+        @include mixin.xs{
+            font-size:1rem;
+        }
     }
     .blocQualitesBloc{
         display:flex;
@@ -33,6 +36,7 @@
         @include mixin.md-lt{
                 flex-direction: column;
             }
+            
         .blocQualitesCard{
             display:flex;
             align-items: center;
@@ -51,12 +55,27 @@
                 @include mixin.lg-lt{
                     width:350px;
                 }
+                @include mixin.lg-l{
+                    width:300px;
+                }
+               
                 @include mixin.md-lt{
                     width:750px;
                 }
                 @include mixin.sm-lt{
-                    width:650px;
+                    width:350px;
                 }
+                @include mixin.xs{
+                    width:350px;
+                    font-size:14px;
+                }
+                @media screen and (max-width: 400px) {
+                    height:150px;
+                    width:300px;
+                 }
+                // @media screen and (max-width: ) {
+                    
+                // }
                 h3{
                     position:absolute;
                     top:50%;
@@ -67,8 +86,10 @@
                     font-weight:500;
                     @include mixin.sm-lt{
                         font-size:1rem;
-
                     }
+                    @media screen and (max-width: 400px) {
+                        font-size:14px;
+                     }
                 }
                 img{
                     object-fit: cover;
