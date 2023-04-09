@@ -26,13 +26,13 @@
     {
         "title" : "Le site OhMyFood",
         "image" : "/images/ohmyfood2.png",
-        "description" :"Le site OhmyFood est une reproduction de site reproduit à partir d'une maquette adobeXd lors de ma formation. C'est une application de commande de repas de luxe dans les principales grandes villes françaises.",
+        "description" :"Le site OhmyFood est une reproduction de site à partir d'une maquette adobeXd lors de ma formation. C'est une application de commande de repas de luxe dans les principales grandes villes françaises.",
         "technologies":[" html ", " scss ", " bootstrap "]
     },
     {
         "title" : "Le site Booki",
         "image" : "/images/booki2.png",
-        "description" :"Le site Booki est une reproduction de site reproduit à partir d'une maquette figma lors de ma formation. C'est une application de location d'hébergements dans les principales grandes villes françaises.",
+        "description" :"Le site Booki est une reproduction de site à partir d'une maquette figma lors de ma formation. C'est une application de location d'hébergements dans les principales grandes villes françaises.",
         "technologies":[" html ", " scss "]
     }
 ]

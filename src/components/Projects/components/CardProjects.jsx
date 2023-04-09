@@ -7,7 +7,8 @@ export default function CardProjects({classNameCard, classNameImg, img, classNam
     const [modale, setModale] = useState(false)
 
     function handleShowModale(){
-        setModale(true)
+        setModale(true);
+        // document.body.setAttribute('style', 'opacity : 0.1');
     }
 
     return(

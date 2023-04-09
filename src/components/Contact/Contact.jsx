@@ -120,26 +120,27 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form action="" className={`${style.formContact}`} onSubmit={handleSubmit(onSubmit)}>
-                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName"/>
+                <form method="post" className={`${style.formContact}`} onSubmit={handleSubmit(onSubmit)} data-netlify="true" netlify netlify-honeypot="bot-field">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name=""/>
                     {
                         errors?.name && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.name.message}</p>
                         )
                     }
-                    <input type="text" {...register("email")} placeholder="Votre email *" className="inputEmail"/>
+                    <input type="text" {...register("email")} placeholder="Votre email *" className="inputEmail" name="email"/>
                     {
                         errors?.email && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.email.message}</p>
                         )
                     }
-                    <textarea type="text" {...register("message")} placeholder="Votre message *" className="inputMessage"/>
+                    <textarea type="text" {...register("message")} placeholder="Votre message *" className="inputMessage" name="message"/>
                     {
                         errors?.message && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
                         )
                     }
-                    <button onClick={onSubmit} className="btnFormContact">Envoyer votre message</button>
+                    <button onClick={onSubmit} className="btnFormContact" type="submit">Envoyer votre message</button>
                 </form>
         </div>
     )
