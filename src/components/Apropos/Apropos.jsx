@@ -1,6 +1,6 @@
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 import style from "./Apropos.module.scss";
 
 

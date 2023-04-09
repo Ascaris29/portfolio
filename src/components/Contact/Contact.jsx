@@ -4,7 +4,7 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function Contact({colorTheme, updateColor}){
 
@@ -22,7 +22,6 @@ export default function Contact({colorTheme, updateColor}){
 
     const {
         register, 
-        handleSubmit,
         formState: { errors }} 
         = useForm({
         resolver : yupResolver(schema),

@@ -3,7 +3,7 @@ import data from "../../Datas/Projets/Projets.json";
 import CardProjects from "./components/CardProjects";
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function Projects({colorTheme, updateColor}){
 
@@ -29,25 +29,25 @@ const slideInTop = (elem, delay, duration) => {
     )
 }
 
-const slideSide = (elem, duration, delay) => {
-    gsap.fromTo(
-        elem, {
-            opacity: 0,
-            x: -200,
-        },
-        {
-            opacity: 1,
-            x: 0,
-            delay: delay || 0.4,
-            duration: duration || 0.6,
-            scrollTrigger:{
-                trigger:elem,
-                start:"top center",
-                end:"bottom center"
-            }
-        }
-    )
-}
+// const slideSide = (elem, duration, delay) => {
+//     gsap.fromTo(
+//         elem, {
+//             opacity: 0,
+//             x: -200,
+//         },
+//         {
+//             opacity: 1,
+//             x: 0,
+//             delay: delay || 0.4,
+//             duration: duration || 0.6,
+//             scrollTrigger:{
+//                 trigger:elem,
+//                 start:"top center",
+//                 end:"bottom center"
+//             }
+//         }
+//     )
+// }
 
 useEffect(() => {
     slideInTop("#titleBlocProjects", "0.5", "2");

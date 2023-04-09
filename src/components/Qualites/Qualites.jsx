@@ -1,7 +1,7 @@
 import style from "./Qualites.module.scss";
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 export default function Qualites({colorTheme, updateColor}){
 

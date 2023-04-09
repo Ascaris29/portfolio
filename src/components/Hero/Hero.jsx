@@ -3,7 +3,7 @@ import video from "../../assets/video/waves.mp4";
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
-import { Link, animateScroll as scroll} from "react-scroll";
+import { Link } from "react-scroll";
 
 
 

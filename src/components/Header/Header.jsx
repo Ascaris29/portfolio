@@ -7,9 +7,6 @@ export default function Header({colorTheme, updateColor}){
     function handleChangeThemeColor(){
         updateColor(!colorTheme);
     }
-    function handleRedirectionSocialMedia(){
-        window.open("https://www.linkedin.com/in/solene-lema-developpeur-web/");
-    }
 
     useEffect(() => {
         if(colorTheme){
