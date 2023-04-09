@@ -1,7 +1,7 @@
 import style from "./Contact.module.scss";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+// import { useForm } from "react-hook-form";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
@@ -135,8 +135,8 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form method="post" className={`${style.formContact}`} data-netlify="true" netlify netlify-honeypot>
-                    <input type="text"  placeholder="Votre prénom *" className="inputName" name="name" id="name"/>
+                <form method="POST" className={`${style.formContact}`} data-netlify="true" netlify netlify-honeypot name="contact">
+                    <input type="text"  placeholder="Votre prénom *" className="inputName" name="name" />
                     {/* {
                         errors?.name && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.name.message}</p>
