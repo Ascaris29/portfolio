@@ -111,11 +111,22 @@ export default function Contact({colorTheme, updateColor}){
         slideInTop(".btnFormContact", 1, 0.3);
     },[])
 
-    function testData(e){
-        e.preventDefault();
-        alert("envoyé");
-    }
-     
+    const onSubmit = (e) => {
+        if(e.name && e.email && e.message !== ""){
+            fetch("/", {
+                method: "POST",
+                headers: {
+                    'Content-Type' : "application/x-www-form-urlencoded"
+                },
+                body:{ ...e},
+            })
+        }else{
+            alert("votre formulaire est vide !")
+        }
+    };
+
+    
+   
 
     return (
         <div id="contact" className={`${style.blocContact}`}>
@@ -124,9 +135,8 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form method="post" className={`${style.formContact}`} data-netlify="true" netlify netlify-honeypot="bot-field">
-                    <input type="hidden" name="form-name" value="contact" />
-                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name="name"/>
+                <form method="post" className={`${style.formContact}`} onSubmit={handleSubmit(onSubmit)} data-netlify="true" netlify netlify-honeypot>
+                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name="name" id="name"/>
                     {
                         errors?.name && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.name.message}</p>
@@ -144,7 +154,7 @@ export default function Contact({colorTheme, updateColor}){
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
                         )
                     }
-                    <button className="btnFormContact" type="submit" onClick={testData()}>Envoyer votre message</button>
+                    <button onClick={onSubmit} className="btnFormContact" type="submit">Envoyer votre message</button>
                 </form>
         </div>
     )
