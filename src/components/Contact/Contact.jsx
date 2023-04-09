@@ -144,7 +144,7 @@ export default function Contact({colorTheme, updateColor}){
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
                         )
                     }
-                    <button onClick={onSubmit} className="btnFormContact" type="submit">Envoyer votre message</button>
+                    <button className="btnFormContact" type="submit">Envoyer votre message</button>
                 </form>
         </div>
     )
