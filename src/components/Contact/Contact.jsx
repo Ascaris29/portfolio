@@ -111,19 +111,19 @@ export default function Contact({colorTheme, updateColor}){
         slideInTop(".btnFormContact", 1, 0.3);
     },[])
 
-    const onSubmit = (e) => {
-        if(e.name && e.email && e.message !== ""){
-            fetch("/", {
-                method: "POST",
-                headers: {
-                    'Content-Type' : "application/x-www-form-urlencoded"
-                },
-                body:{ ...e},
-            })
-        }else{
-            alert("votre formulaire est vide !")
-        }
-    };
+    // const onSubmit = (e) => {
+    //     if(e.name && e.email && e.message !== ""){
+    //         fetch("/", {
+    //             method: "POST",
+    //             headers: {
+    //                 'Content-Type' : "application/x-www-form-urlencoded"
+    //             },
+    //             body:{ ...e},
+    //         })
+    //     }else{
+    //         alert("votre formulaire est vide !")
+    //     }
+    // };
 
     
    
@@ -154,7 +154,7 @@ export default function Contact({colorTheme, updateColor}){
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
                         )
                     } */}
-                    <button onClick={onSubmit} className="btnFormContact" type="submit">Envoyer votre message</button>
+                    <button className="btnFormContact" type="submit">Envoyer votre message</button>
                 </form>
         </div>
     )
