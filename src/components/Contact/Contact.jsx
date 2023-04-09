@@ -111,10 +111,17 @@ export default function Contact({colorTheme, updateColor}){
         slideInTop(".btnFormContact", 1, 0.3);
     },[])
 
-    const onSubmit = (data) => {
-        console.log(data.email)
-    };
+    
 
+    function onSubmit(data){
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(data).toString(),
+          })
+          .then(() => console.log("Form successfully submitted"))
+            .catch((error) => alert(error));
+    }
   
    
 
