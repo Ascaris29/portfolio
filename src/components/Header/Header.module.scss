@@ -1,3 +1,30 @@
+@use "../../assets/style/mixins" as mixin;
+
+@keyframes afterUnderline{
+    from{
+        width:0%;
+    }
+    to{
+        width:70%;
+    }
+}
+
+@keyframes apparition {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity:1;
+    }
+    
+}
+
 
 .header{
     display:flex;
@@ -6,9 +33,33 @@
     max-width:1280px;
     margin:auto;
     width:100%;
+    @media screen and (max-width :1308px){
+        padding:0 50px;
+    }
+    @include mixin.lg-lt{
+        padding:0 50px;
+    }
     .headerLogo{
         color:var(--primary);
         font-size:2rem;
+        font-family:var(--quicksand);
+        position:relative;
+        ::after{
+            animation: afterUnderline 1s forwards 0.3s;
+            content:" ";
+            background-color:var(--primary);
+            height:2px;
+            position:absolute;
+            bottom:0%;
+            left:0%;
+        }
+    }
+    .iconHeaderSocial{
+        display:flex;
+        gap:20px;
+        text-align:center;
+        opacity:0;
+        animation : apparition 3s forwards 0.3s;
     }
     .socialMediaNight{
         color:white;
@@ -21,10 +72,13 @@
         cursor:pointer;
     }
     .btnChangeColor{
+        animation : apparition 3s forwards 0.3s;
+        opacity:0;
         .iconSun{
             color:var(--yellow);
             font-size:1.5rem;
             cursor:pointer;
+
         }
         .iconMoon{
             color:var(--primary);

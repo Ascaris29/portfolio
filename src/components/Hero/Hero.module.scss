@@ -1,3 +1,21 @@
+@use "../../assets/style/mixins" as mixin;
+
+
+@keyframes apparition {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0;
+    }
+    70%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity:1;
+    }
+    
+}
  .blobHero{
         display:flex;
         justify-content: center;
@@ -5,9 +23,15 @@
         margin-top:30px;
         width:100%;
         position:relative;
+        @include mixin.sm-lt{
+             
+        }
         video{
             width:100%;
             height:100%;
+            @include mixin.sm-lt{
+             
+            }
         }
     .blobHeroText{
         position:absolute;
@@ -15,30 +39,75 @@
         top:50%;
         left:50%;
         transform: translate(-50%,-50%);
+        @include mixin.lg-lt{
+            width:70%;
+        }
+        @include mixin.md-lt{
+            width:90%;
+        }
+        @include mixin.sm-lt{
+            width:100%;
+        }
+        
+
         h1{
             color:white;
             font-size:2rem;
+            @include mixin.md-lt{
+                font-size:1.7rem;
+                text-align:center;
+            }
+            @include mixin.sm-lt{
+                font-size:1.3rem;
+            }
+            @include mixin.xs{
+                font-size: 14px;
+            }
         }
         p{
             font-size:1.8rem;
             color:white;
+            margin-top:30px;
+            @include mixin.md-lt{
+                font-size:1.5rem;
+                text-align:center;
+            }
+            @include mixin.sm-lt{
+                font-size:1.3rem;
+            }
+            @include mixin.xs{
+                font-size: 12px;
+            }
         }
         .blobButtons{
             display:flex;
             gap:20px;
             align-items: center;
             justify-content: center;
-            margin-top:10px;
+            margin-top:50px;
+            // @include mixin.sm-lt{
+            //     flex-direction: column;
+            // }
             button{
                 border:none;
                 padding:10px 20px;
                  cursor:pointer;
                 border-radius: 5px;
-                color:var(--primary);
                 font-weight:600;
                 width:200px;
                 height:50px;
                 font-size:1.2rem;
+                background-color: var(--primary);
+                @include mixin.md-lt{
+                    font-size:1.3rem;
+                }
+                @include mixin.sm-lt{
+                    font-size:1rem;
+                }
+                a{
+                    text-decoration:none;
+                    color:var(--white);
+                }
             }
         }
         

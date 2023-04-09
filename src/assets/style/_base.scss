@@ -1,3 +1,5 @@
+@use "../../assets/style/mixins" as mixin;
+
 *{
     box-sizing: border-box;
 }
@@ -9,7 +11,9 @@ body{
     font-family:var(--montserrat);
     background-color: black;
     cursor:url("../../../public/images/sun.png"), pointer;
-    scrollbar-color: var(--primary);
+    @include mixin.md-lt{
+        font-size:50%;
+    }
 }
 
 body::-webkit-scrollbar{

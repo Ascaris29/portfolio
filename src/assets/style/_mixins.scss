@@ -33,9 +33,14 @@
         @content;
     }
 }
+@mixin lg-l{
+    @media (max-width : 1024px){
+        @content;
+    }
+}
 
 @mixin lg-lt{
-    @media (max-width : 1200px){
+    @media (max-width : 1280px){
         @content;
     }
 }

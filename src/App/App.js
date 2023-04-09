@@ -5,6 +5,8 @@ import style from "./App.module.scss";
 import { useState } from "react";
 import Apropos from "../components/Apropos/Apropos";
 import Qualites from "../components/Qualites/Qualites";
+import Contact from "../components/Contact/Contact";
+import Footer from "../components/Footer/Footer";
 
 
 function App({colorTheme}) {
@@ -19,6 +21,8 @@ function App({colorTheme}) {
       <Projects colorTheme={themeColor} updateColor={setThemeColor}/>
       <Apropos colorTheme={themeColor} updateColor={setThemeColor} />
       <Qualites colorTheme={themeColor} updateColor={setThemeColor} /> 
+      <Contact colorTheme={themeColor} updateColor={setThemeColor} />
+      <Footer colorTheme={themeColor} updateColor={setThemeColor}/>
     </div>
   )
 }

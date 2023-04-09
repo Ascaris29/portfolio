@@ -1,17 +1,21 @@
 import style from "./Modale.module.scss"
 
-export default function Modale({title, data}){
+export default function Modale({title, data, modaleState, updateModaleState}){
     //je recupère la props data avec les données récupérées depuis CardProjects récupérées de Projects donc le composant parent
     const desc = data.find((i) => i.title === title)
     // const titleSplit = title.split(0,3)
 
-    console.log(desc)
-    console.log(title)
+    function handleCloseModale(){
+        updateModaleState(false);
+    }
     
     return (
         <div className={`${style.modale}`}>
             { desc && (
             <>
+                <div className={`${style.modaleXmark}`} onClick={handleCloseModale}>
+                    <i className="fa-solid fa-xmark" ></i>
+                </div>
                 <div className={`${style.imgModale}`}>
                     <img src={desc.image} alt="" />
                 </div>

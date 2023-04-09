@@ -1,0 +1,99 @@
+@use "../../assets/style/mixins" as mixin;
+
+
+@keyframes animationItem{
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(30px);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}
+
+
+.blocContact{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width:1280px;
+    margin:auto;
+    padding:150px 0;
+    .blocContactItem{
+        animation : animationItem 10s infinite linear;
+    }
+    .blocContactTitle{
+        margin-top:30px;
+        font-size:1.5rem;
+        color:var(--primary);
+    }
+    .blocPara{
+        margin-top:20px;
+        font-size:1.4rem;
+        @include mixin.md-lt{
+            font-size:1.3rem;
+        }
+        @include mixin.md-lt{
+            font-size:1rem;
+        }
+        i{
+            margin-left:10px;
+            color:var(--primary);
+        }
+    }
+    .formContact{
+        display:flex;
+        flex-direction: column;
+        gap:50px;
+        margin-top:50px;
+        width:100%;
+        input, textarea{
+            width:80%;
+            height:50px;
+            margin:auto;
+            border-radius:5px;
+            border: 3px solid var(--primary); 
+            font-family:var(--montserrat);
+            padding:10px;
+            &:focus{
+                outline:none;
+            }
+        }
+        textarea{
+            height:120px;
+        }
+        
+        ::placeholder{
+                padding-left:5px;
+                font-family:var(--montserrat);
+            }
+        .blocParaErrorInput{
+            color:red;
+            text-align: center;
+            font-size:1rem;
+            margin-top:-30px;
+            @include mixin.sm-lt{
+                font-size:0.9rem;
+            }
+        }
+        button{
+            width:20%;
+            margin:auto;
+            padding:20px;
+            border-radius:5px;
+            background-color:var(--primary);
+            color:var(--white);
+            border:none;
+            font-size:1.1rem;
+            @include mixin.md-lt{
+                width:40%;
+            }
+            @include mixin.sm-lt{
+                font-size:1rem;
+            }
+        }
+    }
+}

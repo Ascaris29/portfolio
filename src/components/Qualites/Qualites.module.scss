@@ -1,23 +1,44 @@
+@use "../../assets/style/mixins" as mixin;
+
+@keyframes animation {
+    0%{
+       transform:rotate(50deg)
+    }
+    50%{
+        transform:rotate(-50deg)
+    }
+    100%{
+        transform:rotate(50deg)
+    }
+}
+
+
 .blocQualites{
-    margin:100px 0;
+    margin:150px 0;
     display:flex;
     flex-direction:column;
     justify-content: space-between;
     align-items: center;
     gap:50px;
+    .blocQualitesItem{
+       animation: animation 10s infinite forwards linear;
+    }
     .blocQualitesTitle{
-        color:var(--white);
         font-size:1.5rem;
         font-weight:500;
     }
     .blocQualitesBloc{
         display:flex;
         gap:30px;
+        @include mixin.md-lt{
+                flex-direction: column;
+            }
         .blocQualitesCard{
             display:flex;
             align-items: center;
             flex-direction: row;
             gap:50px;
+            
             .blocQualitesCardTxt{
                 color:var(--white);
                 font-size:1rem;
@@ -27,6 +48,15 @@
                 height:200px;
                 position:relative;
                 border-radius: 20px;
+                @include mixin.lg-lt{
+                    width:350px;
+                }
+                @include mixin.md-lt{
+                    width:750px;
+                }
+                @include mixin.sm-lt{
+                    width:650px;
+                }
                 h3{
                     position:absolute;
                     top:50%;
@@ -35,6 +65,10 @@
                     z-index:9999;
                     font-size:1.3rem;
                     font-weight:500;
+                    @include mixin.sm-lt{
+                        font-size:1rem;
+
+                    }
                 }
                 img{
                     object-fit: cover;
@@ -44,6 +78,9 @@
                     left:50%;
                     transform:translate(-50%,-50%);
                     z-index:1;
+                    @include mixin.sm-lt{
+                        width:150px;
+                    }
                 }
             }
         }

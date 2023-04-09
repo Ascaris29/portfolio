@@ -1,12 +1,16 @@
-@keyframes card{
-    to{
-        margin-top:0px;
-    }
-    from{
-        margin-top:20px;
+@use "../../assets/style/mixins" as mixin;
+
+
+@keyframes animation{
+    0%{
+        transform:translateX(-300px);
+    }50%{
+        transform:translateX(300px);
+
+    }100%{
+        transform:translateX(-300px);
     }
 }
-
 
 .blocProjects{
     color:white;
@@ -15,19 +19,34 @@
     flex-direction: column;
     align-items: center;
     h2, p{
-        color:white;
         text-align:center;
     }
     h2{
         font-size:2rem;
         margin-top:50px;
+        @include mixin.md-lt{
+            font-size:1.7rem;
+        }
+        @include mixin.sm-lt{
+            font-size:1.5rem;
+        }
     }
     p{
+        margin-top:30px;
         font-size:1.5rem;
+        @include mixin.md-lt{
+            font-size:1.3rem;
+        }
+        @include mixin.sm-lt{
+            font-size:1rem;
+        }
+    }
+    .blocProjectsItem{
+        margin-top:30px;
+        animation:animation 100s linear infinite;
     }
     .blocCardsProject{
         max-width:1280px;
-        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -36,13 +55,24 @@
         gap:30px;
         grid-template-columns: repeat(3, 390px);
         place-content: center;
+        @include mixin.lg-lt{
+            grid-template-columns: repeat(3, 350px);
+            padding:0 15px;
+        }
+        @include mixin.md-lt{
+            grid-template-columns: repeat(2, 350px);
+            padding:0 15px;
+        }
+        @include mixin.sm-lt{
+            grid-template-columns: repeat(1, 100%);
+            width:100%;
+        }
         .card{
             background-color:#264366;
             border-radius:10px;
             padding:20px 10px;
             height:350px;
             cursor:pointer;
-            animation: card 2s infinite linear alternate;
             img{
                 width:100%;
                 border-radius: 10px;
@@ -50,10 +80,10 @@
                 object-fit: cover;
             }
             p{
-                color:var(--primary);
+                color:var(--white);
                 font-size:1rem;
                 text-align:left;
-                margin-left:20px;
+                margin:0 20px;
             }
         }
         .TitleCardProject{
@@ -74,17 +104,6 @@
     }
 }
 
-.animation-first{
-    animation: card 1s infinite linear alternate;
-}
-
-.animation-second{
-    animation: card 1s linear 0.5s infinite alternate;
-}
-
-.animation-third{
-    animation: card 1s linear 1s infinite alternate;
-}
 
 .colorLight{
     color:var(--primary) !important;
