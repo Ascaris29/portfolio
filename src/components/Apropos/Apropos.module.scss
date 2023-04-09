@@ -2,9 +2,9 @@
 
 @keyframes animationItem{
     from{
-        transform: translateX(-250px);
+        transform: translateX(-150px);
     }to{
-        transform: translateX(250px);
+        transform: translateX(150px);
     }
 }
 
@@ -17,7 +17,7 @@
     position: relative;
     .aproposItem{
         margin-bottom:30px;
-        animation: animationItem 50s linear infinite alternate;
+        animation: animationItem 1s linear infinite alternate;
     }
     h2{
         font-size:2rem;

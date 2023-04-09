@@ -37,7 +37,7 @@ export default function Contact({colorTheme, updateColor}){
         gsap.fromTo(
             elem,{
                 opacity: 0,
-                y: -400,
+                y: -20,
             },
             {
                 opacity: 1,
@@ -57,7 +57,7 @@ export default function Contact({colorTheme, updateColor}){
         gsap.fromTo(
             elem, {
                 opacity: 0,
-                x: -600,
+                x: -20,
             },
             {
                 opacity: 1,
@@ -76,7 +76,7 @@ export default function Contact({colorTheme, updateColor}){
         gsap.fromTo(
             elem, {
                 opacity: 0,
-                x: 600,
+                x: -20,
             },
             {
                 opacity: 1,

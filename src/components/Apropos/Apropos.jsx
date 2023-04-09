@@ -106,7 +106,7 @@ export default function Apropos({colorTheme, updateColor}){
                     Je m'adapte très rapidement aux demandes quelqu'elles soient.
                 </p>
                 <div className={`${style.aproposImg} aproposImg`}>
-                    <img src="../images/img_corrigée.jpg" alt="" />
+                    <img src="../images/imgperso.jpg" alt="" />
                 </div>
             </div>
             <div className={`${style.aproposButton} aproposDownloadButton`} onClick={handleClickDownload}><button>Télécharger mon cv <i class="fa-solid fa-download"></i></button></div>
