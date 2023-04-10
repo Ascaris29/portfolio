@@ -112,18 +112,18 @@ export default function Contact({colorTheme, updateColor}){
 
     
 
-    function onSubmit(data){
-        data.preventDefault();
-        const myForm = data.target;
-        const formData = new FormData(myForm);
-        fetch("/", {
-            method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString(),
-          })
-          .then(() => alert("Tout est ok !"))
-            .catch((error) => alert(error));
-    }
+    // function onSubmit(data){
+    //     data.preventDefault();
+    //     const myForm = data.target;
+    //     const formData = new FormData(myForm);
+    //     fetch("/", {
+    //         method: "POST",
+    //         headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //         body: new URLSearchParams(formData).toString(),
+    //       })
+    //       .then(() => alert("Tout est ok !"))
+    //         .catch((error) => alert(error));
+    // }
   
    
 
@@ -134,7 +134,7 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form method="POST" className={`${style.formContact}`} onSubmit={onSubmit} data-netlify="true" netlify netlify-honeypot>
+                <form method="POST" className={`${style.formContact}`} data-netlify="true" netlify netlify-honeypot>
                 <input type="hidden" name="form-name" value="Contact" />
                     <input type="text" placeholder="Votre prénom *" className="inputName" name="name" required/>
                     {/* {
