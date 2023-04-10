@@ -1,34 +1,34 @@
 import style from "./Contact.module.scss";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+// import { useForm } from "react-hook-form";
+// import { yupResolver } from "@hookform/resolvers/yup";
+// import * as yup from "yup";
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
 
 export default function Contact({colorTheme, updateColor}){
 
-    const schema = yup.object({
-        name : yup.string().required('Votre prénom est requis').min(2, 'Votre nom est trop court').max(15, 'Votre nom est trop long'),
-        email : yup.string().email().required('N\'oubliez pas votre email s\'il vous plait'),
-        message : yup.string().required(('J\'ai besoin d\'un message pour comprendre')),
-    })
+    // const schema = yup.object({
+    //     name : yup.string().required('Votre prénom est requis').min(2, 'Votre nom est trop court').max(15, 'Votre nom est trop long'),
+    //     email : yup.string().email().required('N\'oubliez pas votre email s\'il vous plait'),
+    //     message : yup.string().required(('J\'ai besoin d\'un message pour comprendre')),
+    // })
 
-    const defaultValues = {
-        name : "",
-        email : "",
-        message:"",
-    }
+    // const defaultValues = {
+    //     name : "",
+    //     email : "",
+    //     message:"",
+    // }
 
-    const {
-        register, 
-        formState: { errors }} 
-        = useForm({
-        resolver : yupResolver(schema),
-        defaultValues,
-        criteriaMode: "all",
-        mode : "onSubmit"
-    });
+    // const {
+    //     register, 
+    //     formState: { errors }} 
+    //     = useForm({
+    //     resolver : yupResolver(schema),
+    //     defaultValues,
+    //     criteriaMode: "all",
+    //     mode : "onSubmit"
+    // });
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
@@ -134,25 +134,26 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form method="post" className={`${style.formContact}`} onSubmit={onSubmit} data-netlify="true" netlify netlify-honeypot name="form-name" value="Contact">
-                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name="name" required/>
-                    {
+                <form method="POST" className={`${style.formContact}`} onSubmit={onSubmit} data-netlify="true" netlify netlify-honeypot>
+                <input type="hidden" name="form-name" value="Contact" />
+                    <input type="text" placeholder="Votre prénom *" className="inputName" name="name" required/>
+                    {/* {
                         errors?.name && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.name.message}</p>
                         )
-                    }
-                    <input type="text" {...register("email")} placeholder="Votre email *" className="inputEmail" name="email" required/>
-                    {
+                    } */}
+                    <input type="text"  placeholder="Votre email *" className="inputEmail" name="email" required/>
+                    {/* {
                         errors?.email && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.email.message}</p>
                         )
-                    }
-                    <textarea type="text" {...register("message")} placeholder="Votre message *" className="inputMessage" name="message" required/>
-                    {
+                    } */}
+                    <textarea type="text" placeholder="Votre message *" className="inputMessage" name="message" required/>
+                    {/* {
                         errors?.message && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
                         )
-                    }
+                    } */}
                     <button className="btnFormContact" type="submit">Envoyer votre message</button>
                 </form>
         </div>
