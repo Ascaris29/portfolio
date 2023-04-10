@@ -22,7 +22,6 @@ export default function Contact({colorTheme, updateColor}){
 
     const {
         register, 
-        handleSubmit,
         formState: { errors }} 
         = useForm({
         resolver : yupResolver(schema),
@@ -114,8 +113,8 @@ export default function Contact({colorTheme, updateColor}){
     
 
     function onSubmit(data){
-        const myForm = data;
-        console.log(myForm)
+        data.preventDefault();
+        const myForm = data.target;
         const formData = new FormData(myForm);
         fetch("/", {
             method: "POST",
@@ -135,20 +134,20 @@ export default function Contact({colorTheme, updateColor}){
             </div>
             <h2 className={`${style.blocContactTitle} blocContactTitle`}>Formulaire de contact</h2>
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
-                <form method="post" className={`${style.formContact}`} onSubmit={handleSubmit(onSubmit)} data-netlify="true" netlify netlify-honeypot>
-                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name="name"/>
+                <form method="post" className={`${style.formContact}`} onSubmit={onSubmit} data-netlify="true" netlify netlify-honeypot>
+                    <input type="text" {...register("name")} placeholder="Votre prénom *" className="inputName" name="name" required/>
                     {
                         errors?.name && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.name.message}</p>
                         )
                     }
-                    <input type="text" {...register("email")} placeholder="Votre email *" className="inputEmail" name="email"/>
+                    <input type="text" {...register("email")} placeholder="Votre email *" className="inputEmail" name="email" required/>
                     {
                         errors?.email && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.email.message}</p>
                         )
                     }
-                    <textarea type="text" {...register("message")} placeholder="Votre message *" className="inputMessage" name="message"/>
+                    <textarea type="text" {...register("message")} placeholder="Votre message *" className="inputMessage" name="message" required/>
                     {
                         errors?.message && (
                             <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
