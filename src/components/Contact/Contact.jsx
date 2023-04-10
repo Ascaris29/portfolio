@@ -136,23 +136,9 @@ export default function Contact({colorTheme, updateColor}){
             <p className={colorTheme ? `${style.blocPara} colorLight blocContactPara` : `${style.blocPara} colorDark blocContactPara` }>N'hesitez pas à me laisser un petit message pour discuter de vos projets <i className="fa-brands fa-octopus-deploy"></i> </p>
                 <form  name="contact" method="POST" className={`${style.formContact}`} data-netlify="true" netlify-honeypot>
                     <input type="text" placeholder="Votre prénom *" className="inputName" name="name" required/>
-                    {/* {
-                        errors?.name && (
-                            <p className={`${style.blocParaErrorInput}`}>{errors.name.message}</p>
-                        )
-                    } */}
+                    <input type="hidden" name="form-name" value="contact" />
                     <input type="text"  placeholder="Votre email *" className="inputEmail" name="email" required/>
-                    {/* {
-                        errors?.email && (
-                            <p className={`${style.blocParaErrorInput}`}>{errors.email.message}</p>
-                        )
-                    } */}
                     <textarea type="text" placeholder="Votre message *" className="inputMessage" name="message" required/>
-                    {/* {
-                        errors?.message && (
-                            <p className={`${style.blocParaErrorInput}`}>{errors.message.message}</p>
-                        )
-                    } */}
                     <button className="btnFormContact" type="submit">Envoyer votre message</button>
                 </form>
         </div>
