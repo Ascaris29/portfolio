@@ -28,11 +28,10 @@
     <title>Solène LEMA | Développeuse et conceptrice web Finistère </title>
   </head>
   <body>
-    <form name="form-name" netlify netlify-honeypot="bot-field" type="hidden" value="Contact">
-      <input type="hidden" name="form-name" value="Contact" />
-      <input type="text" name="name" />
-      <input type="email" name="email" />
-      <textarea name="message"></textarea>
+    <form name="contact" netlify netlify-honeypot="bot-field" type="hidden">
+      <input type="text" name="name" required/>
+      <input type="email" name="email" required/>
+      <textarea name="message" required ></textarea>
     </form>
     <div id="root"></div>
   </body>
