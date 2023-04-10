@@ -1,5 +1,4 @@
 import style from "./Hero.module.scss";
-import video from "../../assets/video/waves.mp4";
 import { gsap } from "gsap";
 import { ScrollToPlugin, ScrollTrigger } from "gsap/all";
 import { useEffect } from "react";
@@ -52,9 +51,11 @@ useEffect(() => {
 
     return (
                 <main className={`${style.blobHero}`}>
-                    <video src={video} autoPlay loop muted className="video"></video>
+                    <video autoPlay loop muted className="video" width="100%" height="40%" controlsList="nodownload">
+                        <source type="video/mp4" src="/video/waves.mp4"/>
+                    </video>
                     <div className={`${style.blobHeroText} textHero`}>
-                       <h1>Je suis Solène LEMA, développeuse web.</h1> 
+                       <h1>Je suis Solène LEMA, <strong>développeuse web</strong> à <strong>Quimper</strong>.</h1> 
                        <p>Je concois et developpe des sites web accessibles et intuitifs.</p>
                        <p>Ces sites web mettront en valeur votre marque, votre entreprise, votre personnalité aussi merveilleuse soit-elle ✨</p>
                        <div className={`${style.blobButtons}`}>

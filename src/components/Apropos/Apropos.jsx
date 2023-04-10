@@ -89,7 +89,6 @@ export default function Apropos({colorTheme, updateColor}){
         URL.revokeObjectURL(href)
     }
 
-    console.log(colorTheme)
     return (
         <div className={`${style.apropos}`}>
             <div className={`${style.aproposItem} itemApropos`}>
@@ -103,7 +102,7 @@ export default function Apropos({colorTheme, updateColor}){
                     <p className={colorTheme ? `${style.pBlocTxt} colorLight text-end aproposText1`: `${style.pBlocTxt} colorDark text-end aproposText1` }> Au quotidien, j'aime travailler avec <span className="colorYellow"><strong> React.js </strong></span> côté front et j'aime parfois toucher au backend avec <span className="colorYellow"><strong> Node.js </strong></span> & <span className="colorYellow"><strong> PHP </strong></span>.
                     Je peux réaliser des sites vitrines esthétiques et je peux également réaliser des applications efficaces et réactives.
                     L'écoute de mon client est primordiale et je suis impartiale quand à leur choix de design et de fonctionnalités.
-                    Je m'adapte très rapidement aux demandes quelqu'elles soient.
+                    Je m'adapte très rapidement aux demandes quelles qu'elles soient.
                 </p>
                 <div className={`${style.aproposImg} aproposImg`}>
                     <img src="../images/imgperso.jpg" alt="" />

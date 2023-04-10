@@ -10,7 +10,7 @@ body{
     font-size:64%;
     font-family:var(--montserrat);
     background-color: black;
-    cursor:url("../../../public/images/sun.png"), pointer;
+    cursor:url("../../../public/images/ancremouse50.svg"), pointer;
     @include mixin.md-lt{
         font-size:50%;
     }

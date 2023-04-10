@@ -21,7 +21,7 @@ export default function Modale({title, data, modaleState, updateModaleState}){
                 </div>
                 <div className={`${style.textModale}`}>
                     <h3 className={`${style.textTitle}`}>{desc.title}</h3>
-                    <p className={`${style.textTechno}`}>{`Technologies utilisées : ${desc.technologies}`}</p>
+                    <p className={`${style.textTechno}`}><span className="colorYellow">Langages utilisées :</span> {`${desc.technologies}`}</p>
                     <p className={`${style.textDescription}`}>{desc.description}</p>
                 </div>
             </>

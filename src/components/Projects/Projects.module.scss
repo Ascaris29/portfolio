@@ -23,7 +23,7 @@
     }
     h2{
         font-size:2rem;
-        margin-top:50px;
+        margin-top:20px;
         @include mixin.md-lt{
             font-size:1.7rem;
         }
@@ -70,6 +70,7 @@
         gap:30px;
         grid-template-columns: repeat(3, 390px);
         place-content: center;
+        
         @include mixin.lg-lt{
             grid-template-columns: repeat(3, 350px);
             padding:0 15px;
@@ -83,7 +84,7 @@
             padding:0 15px;
         }
         @include mixin.sm-lt{
-            grid-template-columns: repeat(1, 100%);
+            grid-template-columns: repeat(1, 90%);
             width:100%;
         }
         @media screen and (max-width: 400px) {
@@ -93,7 +94,7 @@
         .card{
             background-color:#264366;
             border-radius:10px;
-            padding:20px 10px;
+            padding:40px 20px;
             height:350px;
             cursor:pointer;
             @media screen and (max-width: 400px) {
