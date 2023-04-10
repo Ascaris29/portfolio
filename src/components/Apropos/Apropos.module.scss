@@ -96,10 +96,14 @@
             height:500px;
             border-radius:10px;
             object-fit: cover;
+            object-position: right;
             @include mixin.md-lt{
+                height:400px;
+            }
+            @include mixin.xs{
                 height:300px;
             }
-            @media screen and (max-width: 400px) {
+            @media screen and (max-width: 415px) {
                 height:200px;
              }
         }
