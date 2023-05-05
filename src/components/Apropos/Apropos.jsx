@@ -74,7 +74,7 @@ export default function Apropos({colorTheme, updateColor}){
     },[])
 
     async function handleClickDownload(){
-        const fileGet = await fetch("../cv.pdf", {
+        const fileGet = await fetch("../CV_solene_lema_dev_2023.pdf", {
             method: 'get',
             mode:'no-cors'
             }
@@ -105,7 +105,7 @@ export default function Apropos({colorTheme, updateColor}){
                     Je m'adapte très rapidement aux demandes quelles qu'elles soient.
                 </p>
                 <div className={`${style.aproposImg} aproposImg`}>
-                    <img src="../images/imgperso.jpg" alt="" />
+                    <img src="../images/photocv.jpg" alt="" />
                 </div>
             </div>
             <div className={`${style.aproposButton} aproposDownloadButton`} onClick={handleClickDownload}><button>Télécharger mon cv <i class="fa-solid fa-download"></i></button></div>
